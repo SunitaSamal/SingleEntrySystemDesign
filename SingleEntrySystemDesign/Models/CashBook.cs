@@ -5,22 +5,28 @@ using System.Text;
 
 namespace SingleEntrySystemDesign.Models
 {
+    /// <summary>
+    /// Bookkeeping holds Userprofile along with the daily transactions and remaining Cash Balance
+    /// </summary>
     public class CashBook
     {
         [Key]
-        public int Id { get; set; }
+        public string Id { get; set; }
         [Required]
         public UserProfile UserProfile { get; set; }
         [Required]
-        public Transaction Transaction { get; set; }
+        public List<Transaction> Transactions { get; set; }
         [Required]
         public double CashBalance { get; set; }
     }
 
+    /// <summary>
+    /// Ledger Entry with CashBalance for a time period 
+    /// </summary>
     public class SingleLedgerEntry
     {
         [Key]
-        public int Id { get; set; }
+        public string Id { get; set; }
         [Required]
         public CashBook CashBook { get; set; }
 

@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace SingleEntrySystemDesign.Models
 {
     public class Transaction
     {
         [Key]
-        public int Id { get; set; }
+        public string Id { get; set; }
         [Required]
         public TransactionType TransactionType { get; set; }
         [Required]
